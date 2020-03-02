@@ -104,13 +104,11 @@ public class Sorting
         ArrayList<Integer> leftList = new ArrayList<Integer>();
         ArrayList<Integer> rightList = new ArrayList<Integer>();
 
-        for (int i=0; i<leftSize; ++i) {
-            leftList.add(0);
-            leftList.set(i,list.get(l + i));
+        for (int i = 0; i < leftSize; i++) {
+            leftList.add(i,list.get(l + i));
         }
-        for (int j=0; j<rightSize; ++j) {
-            rightList.add(0);
-            rightList.set(j,list.get(m + 1+ j));
+        for (int j = 0; j < rightSize; j++) {
+            rightList.add(j,list.get(m + 1+ j));
         }
 
         int i = 0, j = 0;
