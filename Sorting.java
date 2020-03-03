@@ -9,66 +9,84 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 import java.util.Collections;
+import java.util.Scanner;
 public class Sorting
 {
     public static void main() {
         long startTime;
         long endTime;
         long timeElapsed;
-        int arrayLength = 1000;
+        int arrayLength = 100;
 
-        // ArrayList<Integer> list1 = new ArrayList<Integer>();         
-        // fillArray1(list1, arrayLength);
-        // ArrayList<Integer> list1og = new ArrayList<Integer>(list1);         
+        Scanner input = new Scanner (System.in);
+        System.out.print("Input a specific method of sorting. If you want to do all methods, push 'ENTER'\n\n1) Bubble Sort\n2) Selecion Sort\n3) Insertion Sort\n4) Merge Sort\n5) Quick Sort");
+        String response = input.nextLine();
 
-        // System.out.println("         SORTING\n");
-        // startTime = new Date().getTime();
-        // System.out.println("Bubble:         " + bubble(list1) + "\nCorrect:        " + testForCorrectSort1(list1, list1og));
-        // endTime = new Date().getTime();
-        // timeElapsed = endTime - startTime;
-        // System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        System.out.println("\f          SORTING METHODS\n");
 
-        // ArrayList<Integer> list2 = new ArrayList<Integer>();       
-        // fillArray1(list2, arrayLength);
-        // ArrayList<Integer> list2og = new ArrayList<Integer>(list2); 
+        if (response.equalsIgnoreCase("1") || response.isEmpty()) {
+            ArrayList<Integer> list1 = new ArrayList<Integer>();         
+            fillArray1(list1, arrayLength);
+            ArrayList<Integer> list1og = new ArrayList<Integer>(list1);         
 
-        // startTime = new Date().getTime();
-        // System.out.println("Selection:      " + selection(list2) + "\nCorrect:        " + testForCorrectSort1(list2, list2og));
-        // endTime = new Date().getTime();
-        // timeElapsed = endTime - startTime;
-        // System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+            startTime = new Date().getTime();
+            System.out.println("Bubble:         " + bubble(list1) + "\nCorrect:        " + testForCorrectSort1(list1, list1og));
+            endTime = new Date().getTime();
+            timeElapsed = endTime - startTime;
+            System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        }
 
-        // ArrayList<Integer> list3 = new ArrayList<Integer>();         
-        // fillArray1(list3, arrayLength);
-        // ArrayList<Integer> list3og = new ArrayList<Integer>(list3);            
+        if (response.equalsIgnoreCase("2") || response.isEmpty()) {
+            ArrayList<Integer> list2 = new ArrayList<Integer>();       
+            fillArray1(list2, arrayLength);
+            ArrayList<Integer> list2og = new ArrayList<Integer>(list2); 
 
-        // startTime = new Date().getTime();
-        // System.out.println("Insertion:      " + insertion(list3) + "\nCorrect:        " + testForCorrectSort1(list3, list3og));
-        // endTime = new Date().getTime();
-        // timeElapsed = endTime - startTime;
-        // System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+            startTime = new Date().getTime();
+            System.out.println("Selection:      " + selection(list2) + "\nCorrect:        " + testForCorrectSort1(list2, list2og));
+            endTime = new Date().getTime();
+            timeElapsed = endTime - startTime;
+            System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        }
 
-        // ArrayList<Integer> list4 = new ArrayList<Integer>();         
-        // fillArray1(list4, arrayLength);
-        // ArrayList<Integer> list4og = new ArrayList<Integer>(list4);          
+        if (response.equalsIgnoreCase("3") || response.isEmpty()) {
+            ArrayList<Integer> list3 = new ArrayList<Integer>();         
+            fillArray1(list3, arrayLength);
+            ArrayList<Integer> list3og = new ArrayList<Integer>(list3);            
 
-        // startTime = new Date().getTime();
-        // System.out.println("Merge:          " + mergeSort(list4, 0, list4.size()-1) + "\nCorrect:        " + testForCorrectSort1(list4, list4og));
-        // endTime = new Date().getTime();
-        // timeElapsed = endTime - startTime;
-        // System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+            startTime = new Date().getTime();
+            System.out.println("Insertion:      " + insertion(list3) + "\nCorrect:        " + testForCorrectSort1(list3, list3og));
+            endTime = new Date().getTime();
+            timeElapsed = endTime - startTime;
+            System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        }
 
-        ArrayList<Integer> list5 = new ArrayList<Integer>();         
-        fillArray1(list5, arrayLength);
-        ArrayList<Integer> list5og = new ArrayList<Integer>(list5);  
-        
-        startTime = new Date().getTime();
-        System.out.println("Quick:          " + quick(list5, 0, list5.size()-1) + "\nCorrect:        " + testForCorrectSort1(list5, list5og));
-        endTime = new Date().getTime();
-        timeElapsed = endTime - startTime;
-        System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        if (response.equalsIgnoreCase("4") || response.isEmpty()) {
+            ArrayList<Integer> list4 = new ArrayList<Integer>();         
+            fillArray1(list4, arrayLength);
+            ArrayList<Integer> list4og = new ArrayList<Integer>(list4);          
+
+            startTime = new Date().getTime();
+            System.out.println("Merge:          " + mergeSort(list4, 0, list4.size()-1) + "\nCorrect:        " + testForCorrectSort1(list4, list4og));
+            endTime = new Date().getTime();
+            timeElapsed = endTime - startTime;
+            System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        }
+
+        if (response.equalsIgnoreCase("5") || response.isEmpty()) {
+
+            ArrayList<Integer> list5 = new ArrayList<Integer>();         
+            fillArray1(list5, arrayLength);
+            ArrayList<Integer> list5og = new ArrayList<Integer>(list5);  
+
+            startTime = new Date().getTime();
+            System.out.println("Quick:          " + quick(list5, 0, list5.size()-1) + "\nCorrect:        " + testForCorrectSort1(list5, list5og));
+            endTime = new Date().getTime();
+            timeElapsed = endTime - startTime;
+            System.out.println("Time Elapsed:   " + timeElapsed + " Milliseconds \n");
+        }
 
     }
+
     public static ArrayList<Integer> fillArray1(ArrayList<Integer> list, int arrayLength) {       
         for (int i = 0; i < arrayLength; i++) {
             list.add((int)(Math.random() * 51) + 50);            
@@ -94,8 +112,7 @@ public class Sorting
             int key = list.get(i);
             int j = i - 1;
             while (j >= 0 && key < list.get(j)) {
-                list.remove(j+1);   
-                list.add(j, key);               
+                swap(list, j, j+1);              
                 j--;
             }      
         }               
@@ -189,11 +206,30 @@ public class Sorting
                 list.set(j, temp);
                 i++;
                 j--;
-            }
-            quick(list, l, j);
-            quick(list, i, r);
+            }            
         }
+        quick(list, l, j);           
+        quick(list, i, r);
         return list;
+    }
+
+    public static void displayDisplay(ArrayList<Integer> list) {
+        System.out.print("\f");
+        sleep(2000);
+        display(list);
+    }
+
+    public static void display(ArrayList<Integer> list) {
+        int max = Collections.max(list);
+        for (int i = max-1; i >= 0; i-=3) {
+            for (int j = 0; j < list.size(); j++) {
+                if (list.get(j) <= i) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+        }
     }
 
     //***  Below is the code to test if the sorting is correct  ***
@@ -211,5 +247,14 @@ public class Sorting
         list.set(x, list.get(y));
         list.set(y, temp);
         return list;
+    }
+
+    public static void sleep (int wait) {
+        try {
+            Thread.sleep(wait);
+        } 
+        catch(InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }   
     }
 }
